@@ -31,4 +31,8 @@ if (result < 0) { goto usage_error;return -1; } } // lottery ball numbers are al
 return 0; }
 
 
- if (LUCKY_NUMBER == power_ball) { result = result * 2; } if (favourite) { result = result * 2; } printf("%d percent chance of winning\n", result); return 0; usage_error: fprintf(stderr, "Usage: %s [-favourite] (5 white balls) power_ball\n", argv[0]); return -1; }
+ if (LUCKY_NUMBER == power_ball) { result = result * 2; } if (favourite) { result = result * 2; } printf("%d percent chance of winning\n", result); return 0; usage_error: fprintf(stderr, "Usage: %s [-favourite] (5 white balls) power_ball\n", argv[0]); return -1; } }
+ // lottery ball numbers are always shown sorted 
+qsort(white_balls, 5, sizeof(int), my_sort_func); 
+// Here should be typed a function to calculate the probability 
+return 0;
